@@ -15,11 +15,12 @@ class PlacesController < ApplicationController
 
   def new
     # render view with new Place form
+    @place = Place.new
   end
 
   def create
     # start with a new Place
-    @place = Place.new
+    @place = Place.new(params["place"])
 
     # assign user-entered form data to Place's columns
     @place["name"] = params["name"]
